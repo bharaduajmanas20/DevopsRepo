@@ -1,0 +1,9 @@
+<apex:page controller="ECommerceCont" >
+<apex:form >
+<apex:pageBlock title="E-commerce Management System" >
+<apex:pageMessages ></apex:pageMessages>
+<apex:commandButton value="Products" action="{!product}" style="color: #ffff; background-color: rgb(236, 148, 134); border-color: #4cae4c;background-image: none; border: 3px solid transparent; border-radius: 10px; display: inline-block; padding: 24px 24px; margin-bottom: 0; font-size: 18px; font-weight: normal; line-height: 1.42857143; text-align: center; white-space: nowrap; vertical-align: middle; -ms-touch-action: manipulation; touch-action: manipulation;"/>
+<apex:commandButton value="Orders" action="{!order}" style="color: #ffff; background-color: rgb(236, 148, 134); border-color: #4cae4c;background-image: none; border: 3px solid transparent; border-radius: 10px; display: inline-block; padding: 24px 24px; margin-bottom: 0; font-size: 18px; font-weight: normal; line-height: 1.42857143; text-align: center; white-space: nowrap; vertical-align: middle; -ms-touch-action: manipulation; touch-action: manipulation;"/>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

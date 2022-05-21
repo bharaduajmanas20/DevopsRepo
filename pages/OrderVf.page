@@ -1,0 +1,41 @@
+<apex:page controller="EdDelCont">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<body style="background-color: rgb(101, 229, 238);">
+<apex:form id="form" >
+    <div class="container mt-3">
+  <div class="container bg-success">
+  <div class="card" style="border: 10px;">
+      <div style="background-color: rgb(236, 148, 134);" class="card body">
+<apex:pageBlock title="Order">
+<apex:pageMessages ></apex:pageMessages>
+<apex:pageBlockTable value="{!odd}" var="order">
+<apex:column value="{!order.Name}"/>
+<apex:column value="{!order.Customer_Name__c}"/>
+<apex:column value="{!order.Email_Address__c}"/>
+<apex:column value="{!order.Phone_Number__c}"/>
+<apex:column value="{!order.Product__c}"/>
+<apex:column value="{!order.Quantity__c}"/>
+<apex:column value="{!order.GST_INN__c}"/>
+<apex:column value="{!order.Status__c}"/>
+<apex:column value="{!order.Date_of_Order__c}"/>
+<apex:column value="{!order.Total_Price__c}"/>
+<apex:column >
+<apex:outputLink title="" value="/{!order.id}/e?retURL=https://mirketasoftwarepvtltd-f-dev-ed.lightning.force.com/lightning/n/Order_Details" style="color: #ffff; background-color: rgb(236, 148, 134); border-color: #4cae4c;background-image: none; border: 1px solid transparent; border-radius: 10px; display: inline-block; padding: 6px 6px; margin-bottom: 0; font-size: 14px; font-weight: bold; line-height: 1.42857143; text-align: center; white-space: nowrap; vertical-align: middle; -ms-touch-action: manipulation; touch-action: manipulation;">Edit</apex:outputLink>
+</apex:column>
+<apex:column >
+<apex:commandButton action="{! DeleteAccount}" value="Delete" title="Delete" reRender="form" style="color: #ffff; background-color: rgb(236, 148, 134); border-color: #4cae4c;background-image: none; border: 1px solid transparent; border-radius: 10px; display: inline-block; padding: 6px 6px; margin-bottom: 0; font-size: 14px; font-weight: bold; line-height: 1.42857143; text-align: center; white-space: nowrap; vertical-align: middle; -ms-touch-action: manipulation; touch-action: manipulation;">
+<apex:param name="delId" assignTo="{!delId}" value="{!order.Id}" />
+</apex:commandButton>
+</apex:column>
+</apex:pageBlockTable>
+</apex:pageBlock>
+</div>
+</div>
+</div>
+</div>
+</apex:form>
+</body>
+</apex:page>

@@ -1,0 +1,32 @@
+<apex:page controller="CustomController">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+  <body style="background-color: rgb(222, 238, 153);">
+      <apex:form >
+      <div class="container mt-3">
+  <div class="container bg-success">
+  <div class="card" style="border: 50px;">
+    <apex:pageBlock title="Add Product Here!">
+        <apex:pageMessages ></apex:pageMessages>
+        <apex:pageBlockSection >
+         <apex:inputText label="Product Name" value="{!prod.Name}"/>
+         <apex:inputField label="List of Products" value="{!prod.List_of_Products__c}"/>
+         <apex:inputField label="Status" value="{!prod.Approval_Status__c}"/>
+         <apex:inputField label="Cost" value="{!prod.Cost_of_Products__c}"/>
+         <apex:inputField label="Brand" value="{!prod.Brand_Names__c}"/>
+         <apex:inputField label="Model" value="{!prod.Models__c}"/>
+         <apex:inputField label="Units Available" value="{!prod.Units_Available__c}"/>
+         </apex:pageBlockSection>
+         <apex:pageBlockButtons >
+          <apex:commandButton value="Cancel" action="{!Cancel}" style="color: #ffff; background-color: rgb(101, 149, 238); border-color: #4cae4c;background-image: none; border: 3px solid transparent; border-radius: 10px; display: inline-block; padding: 6px 12px; margin-bottom: 0; font-size: 16px; font-weight: normal; line-height: 1.42857143; text-align: center; white-space: nowrap; vertical-align: middle; -ms-touch-action: manipulation; touch-action: manipulation;"/>          
+          <apex:commandButton value="Save Product" action="{!saveProduct}" style="color: #ffff; background-color: rgb(206, 101, 238); border-color: #4cae4c;background-image: none; border: 3px solid transparent; border-radius: 10px; display: inline-block; padding: 6px 12px; margin-bottom: 0; font-size: 16px; font-weight: normal; line-height: 1.42857143; text-align: center; white-space: nowrap; vertical-align: middle; -ms-touch-action: manipulation; touch-action: manipulation;"/>
+         </apex:pageBlockButtons>
+    </apex:pageBlock>
+          </div>
+          </div>
+          </div>
+          </apex:form>
+          </body>
+</apex:page>

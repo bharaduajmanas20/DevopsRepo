@@ -1,0 +1,16 @@
+1.  objects/Our_Product__c.object (Our_Product__c.Product_Management_Our_Product) -- Error: In field: queue - no Queue named Product_Management found (line 763, column 16)
+2.  applications/Manas_Bharadwaj_mmb.app -- Error: In field: utilityBar - no FlexiPage named Product_And_Order_UtilityBar found
+3.  tabs/Product_Details.tab -- Error: In field: flexiPage - no FlexiPage named Product_Details found
+4.  tabs/Order_Details.tab -- Error: In field: flexiPage - no FlexiPage named Order_Details found
+5.  tabs/New_Product.tab -- Error: In field: flexiPage - no FlexiPage named New_Product found
+6.  tabs/New_Order.tab -- Error: Must specify at least one of: customObject, scontrol, url, aura, lwc, flexipage, page or an action override if it's a standard tab
+7.  approvalProcesses/Our_Product__c.Approve_It.approvalProcess -- Error: Approval step Step_1 references bharaduajmanas20@gmail.com, which doesn't exist as a user. (line 15, column 23)
+8.  profiles/Admin.profile -- Error: Unknown user permission: ManagePartners
+<actionOverrides>
+        <actionName>Tab</actionName>
+        <content>My_page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+    </actionOverrides>

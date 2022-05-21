@@ -1,0 +1,22 @@
+<apex:page controller="SearchController">
+    <apex:form >
+    <apex:pageBlock title="Product Details">
+            <apex:inputText label="Product Name" value="{!productName}" onkeyup="doSrch()" html-placeholder="Enter Product Name"/>
+        	<apex:actionFunction name="letsrch" action="{!doSearch}" rerender="ss"/>  
+        <script>
+        function doSrch()
+        {
+            letsrch();
+        }
+        	</script>
+            <apex:pageBlockTable value="{!prod}" var="pro" id="ss">
+                <apex:column value="{!pro.name}"/>
+                <apex:column value="{!pro.List_of_Products__c}"/>
+                <apex:column value="{!pro.Approval_Status__c}"/>
+                <apex:column value="{!pro.Cost_of_Products__c}"/>
+                <apex:column value="{!pro.Brand_Names__c}"/>
+                <apex:column value="{!pro.Models__c}"/>
+            </apex:pageBlockTable>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,63 @@
+<apex:page controller="DisplayQuery">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <body style="background-color: rgb(101, 229, 238);">
+    <apex:form >
+        <div class="container mt-3">
+    <div class="container bg-warning">
+    <div class="card" style="border: 50px;">
+        <apex:pageBlock title="Product Details">
+        <apex:inputText label="Product Name" value="{!productName}" onkeyup="doSearch()" html-placeholder="Enter Product Name"/>
+        	<apex:actionFunction name="letsrch" action="{!doSearch}" rerender="ss"/>  
+        <script>
+        function doSearch()
+        {
+            letsrch();
+        }
+        	</script>
+         <apex:pageBlockTable value="{!prod}" var="a" id="ss">
+                <apex:column value="{!a.name}"/>
+                <apex:column value="{!a.List_of_Products__c}"/>
+                <apex:column value="{!a.Approval_Status__c}"/>
+                <apex:column value="{!a.Cost_of_Products__c}"/>
+                <apex:column value="{!a.Brand_Names__c}"/>
+                <apex:column value="{!a.Models__c}"/>
+                <apex:column value="{!a.Units_Available__c}"/>
+            </apex:pageBlockTable>
+</apex:pageBlock>
+</div>
+</div>
+</div>
+      <div class="container mt-3">
+    <div class="container bg-warning">
+    <div class="card" style="border: 50px;">
+    <apex:pageBlock title="Details">
+        <apex:pageBlockSection title="Product Details" columns="1">
+            <apex:pageBlockTable value="{!lstWrap}" var="wrap">
+                <apex:column >
+                    <apex:inputCheckbox value="{!wrap.isSelected}"/>
+                </apex:column>
+                <apex:column value="{!wrap.prodWrap.name}"/>            
+                <apex:column value="{!wrap.prodWrap.List_of_Products__c}"/>            
+                <apex:column value="{!wrap.prodWrap.Approval_Status__c}"/>            
+                <apex:column value="{!wrap.prodWrap.Cost_of_Products__c}"/>
+                <apex:column value="{!wrap.prodWrap.Brand_Names__c}"/>
+                <apex:column value="{!wrap.prodWrap.Models__c}"/>
+                <apex:column value="{!wrap.prodWrap.Units_Available__c}"/>
+                <apex:column >
+                    <apex:outputLink title="" value="/{!wrap.prodWrap.id}/e?retURL=https://mirketasoftwarepvtltd-f-dev-ed.lightning.force.com/lightning/n/Order_Details" style="color: #ffff; background-color: rgb(236, 148, 134); border-color: #4cae4c;background-image: none; border: 1px solid transparent; border-radius: 10px; display: inline-block; padding: 6px 12px; margin-bottom: 0; font-size: 14px; font-weight: bold; line-height: 1.42857143; text-align: center; white-space: nowrap; vertical-align: middle; -ms-touch-action: manipulation; touch-action: manipulation;" >Edit</apex:outputLink>
+                </apex:column>
+               </apex:pageBlockTable>
+            </apex:pageBlockSection>
+                     <apex:pageBlockButtons >
+                     <apex:commandButton value="Delete" action="{!doDelete}" style="color: #ffff; background-color: rgb(206, 101, 238); border-color: #4cae4c;background-image: none; border: 3px solid transparent; border-radius: 10px; display: inline-block; padding: 6px 12px; margin-bottom: 0; font-size: 16px; font-weight: normal; line-height: 1.42857143; text-align: center; white-space: nowrap; vertical-align: middle; -ms-touch-action: manipulation; touch-action: manipulation;"/>
+            </apex:pageBlockButtons>
+    </apex:pageBlock>
+        </div>
+</div>
+</div>
+    </apex:form>
+</body>
+</apex:page>

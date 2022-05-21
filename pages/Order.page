@@ -1,0 +1,35 @@
+<apex:page controller="OrderController">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <body style="background-color: rgb(101, 229, 238);">
+    <apex:form >
+        <div class="container mt-3">
+  <div class="container bg-success">
+  <div class="card" style="border: 50px;">
+    <apex:pageBlock title="Add Order">
+        <apex:pageMessages ></apex:pageMessages>
+        <apex:pageBlockSection >
+         <apex:inputText label="Customer Name" value="{!ord.Customer_Name__c}"/>
+         <apex:inputTextarea label="Address" value="{!ord.Address__c}"/>
+         <apex:inputField label="Date of Order" value="{!ord.Date_of_Order__c}"/>
+         <apex:inputField label="Email Address" value="{!ord.Email_Address__c}"/>
+         <apex:inputField label="GST INN" value="{!ord.GST_INN__c}"/>
+         <apex:inputField label="Phone Number" value="{!ord.Phone_Number__c}"/>
+         <apex:inputField label="Product" value="{!ord.Product__c}"/>
+         <apex:inputField label="Quantity" value="{!ord.Quantity__c}"/>
+         <apex:inputField label="Status" value="{!ord.Status__c}"/>
+         <apex:inputField label="Total Price" value="{!ord.Total_Price__c}"/>
+         </apex:pageBlockSection>
+         <apex:pageBlockButtons >
+          <apex:commandButton value="Cancel" action="{!CancelOrder}" style="color: #ffff; background-color: rgb(236, 148, 134); border-color: #4cae4c;background-image: none; border: 3px solid transparent; border-radius: 10px; display: inline-block; padding: 6px 12px; margin-bottom: 0; font-size: 16px; font-weight: normal; line-height: 1.42857143; text-align: center; white-space: nowrap; vertical-align: middle; -ms-touch-action: manipulation; touch-action: manipulation;"/>
+          <apex:commandButton value="Place Your Order" action="{!saveOrder}" style="color: #ffff; background-color: rgb(168, 170, 20); border-color: #4cae4c;background-image: none; border: 3px solid transparent; border-radius: 10px; display: inline-block; padding: 6px 12px; margin-bottom: 0; font-size: 16px; font-weight: normal; line-height: 1.42857143; text-align: center; white-space: nowrap; vertical-align: middle; -ms-touch-action: manipulation; touch-action: manipulation;"/>
+         </apex:pageBlockButtons>
+    </apex:pageBlock>
+          </div>
+          </div>
+          </div>
+        </apex:form>
+          </body>
+</apex:page>
